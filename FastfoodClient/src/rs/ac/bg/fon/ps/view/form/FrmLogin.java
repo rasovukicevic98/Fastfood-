@@ -126,7 +126,35 @@ public class FrmLogin extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         
-         
+         try{
+             user =new User();
+             validateForm();
+             System.out.println("Froma je validirana");
+             user.setUsername(txtUsername.getText());
+             user.setPassword(String.valueOf(txtPassword.getPassword()));
+             System.out.println(user.getPassword());
+             System.out.println("");
+             ServerskiOdgovor so = Controller.getInstance().login(user);
+             System.out.println("Uspjesno primljen odgovor"+so.isUspjesno());
+             if(so.isUspjesno()){
+                 Controller.getInstance().setCurrentUser((User) so.getObject());
+                 user = Controller.getInstance().getUlogovaniUser();
+                 System.out.println(user.getUsername());
+                 this.dispose();
+                 new FrmMain().setVisible(true);
+             }else{
+                 
+                 JOptionPane.showMessageDialog(this, so.getPoruka());
+             }
+             
+         }
+         catch (Exception ex){
+             ex.printStackTrace();
+             JOptionPane.showMessageDialog(this, ex.getMessage(),"Login error", JOptionPane.ERROR_MESSAGE);
+             
+             
+         }
+        
         
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -146,21 +174,7 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 
-  
-
-
-    private void closeForm(ActionEvent e) {
-        this.dispose();
-    }
-
-    private void openMainForm(ActionEvent e) {
-        closeForm(e);
-        
-        JFrame mainForm = new FrmMain(); 
-        mainForm.setVisible(true);
    
-    }
-
     private void validateForm()throws Exception {
         
         String errorMessage ="";
