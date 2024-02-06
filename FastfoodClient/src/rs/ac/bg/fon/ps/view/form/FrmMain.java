@@ -311,12 +311,30 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiFindByNameActionPerformed
 
     private void table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1MouseClicked
-        
+        try {
+           Controller.getInstance().setCurrentTable("table1");
+           FrmNewInvoice btn=  new FrmNewInvoice();
+           btn.run();
+            
+          
+            
+        } catch (Exception ex) {
+            Logger.getLogger(FrmMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_table1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        
+        try {
+           Controller.getInstance().setCurrentTable("table2");
+           FrmNewInvoice btn=  new FrmNewInvoice();
+           btn.run();
+            
+          
+            
+        } catch (Exception ex) {
+            Logger.getLogger(FrmMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jmiViewAllProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiViewAllProductsActionPerformed
@@ -330,15 +348,42 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiEditProductActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-       
+       try {
+           Controller.getInstance().setCurrentTable("table3");
+           FrmNewInvoice btn=  new FrmNewInvoice();
+           btn.run();
+            
+          
+            
+        } catch (Exception ex) {
+            Logger.getLogger(FrmMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-       
+       try {
+           Controller.getInstance().setCurrentTable("table4");
+           FrmNewInvoice btn=  new FrmNewInvoice();
+           btn.run();
+            
+          
+            
+        } catch (Exception ex) {
+            Logger.getLogger(FrmMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        
+        try {
+           Controller.getInstance().setCurrentTable("table5");
+           FrmNewInvoice btn=  new FrmNewInvoice();
+           btn.run();
+            
+          
+            
+        } catch (Exception ex) {
+            Logger.getLogger(FrmMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
