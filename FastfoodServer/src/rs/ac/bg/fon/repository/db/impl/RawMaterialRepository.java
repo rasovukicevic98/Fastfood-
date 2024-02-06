@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import rs.ac.bg.fon.repository.memory.*;
 import rs.ac.bg.fon.repository.*;
 import java.util.ArrayList;
 import java.util.List;

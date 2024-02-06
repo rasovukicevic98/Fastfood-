@@ -51,7 +51,47 @@ public class ObradaKlijentskihZahtjeva extends Thread{
                         
                         posaljiOdgovor(so);
                         break;
-                    
+                    case Operacija.ADD_RAW_MATERIAL:
+                        System.out.println("dodajemo raw material");
+                        so = new ServerskiOdgovor();
+                        RawMaterial rawMaterial = (RawMaterial) kz.getObjekat();
+                        boolean good = Controller.getInstance().addRawMaterial(rawMaterial);
+                        if(good){
+                            so.setUspjesno(true);
+                        }else{
+                            so.setUspjesno(false);
+                        }
+                        so.setObject(rawMaterial);
+                        so.setPoruka("Uspjesno ste dodali raw material.\n");
+                        posaljiOdgovor(so);
+                        break;
+                    case Operacija.GET_ALL_SUPPLIERS:
+                        System.out.println("Vrcemo sve suppliere");
+                        so = new ServerskiOdgovor();
+                        List<Supplier> suppliers = Controller.getInstance().getAllSuppliers();
+                        so.setObject(suppliers);
+                        posaljiOdgovor(so);
+                        break;
+                    case Operacija.GET_ALL_RAW_MATERIALS:
+                        List<RawMaterial> rawMaterials = Controller.getInstance().getAllRawMaterials();
+                        so = new ServerskiOdgovor();
+                        so.setObject(rawMaterials);
+                        posaljiOdgovor(so);
+                        break;
+                    case Operacija.ADD_ALL_RAW_MATERIALS:
+                        so = new ServerskiOdgovor();
+                        List<RawMaterial> rawMaterials1 = (List<RawMaterial>) kz.getObjekat();
+                        boolean good1 = Controller.getInstance().addAllRawMaterials(rawMaterials1);
+                        so.setUspjesno(good1);
+                        posaljiOdgovor(so);
+                        break;
+                    case Operacija.DELETE_RAW_MATERIAL:
+                        so = new ServerskiOdgovor();
+                        rawMaterial = (RawMaterial) kz.getObjekat();
+                        good = Controller.getInstance().deleteRawMaterial(rawMaterial);
+                        so.setUspjesno(good);
+                        posaljiOdgovor(so);
+                        break;
                 }
             } catch (Exception ex) {
                 Logger.getLogger(ObradaKlijentskihZahtjeva.class.getName()).log(Level.SEVERE, null, ex);
