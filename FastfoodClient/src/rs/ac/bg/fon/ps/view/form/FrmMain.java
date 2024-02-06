@@ -63,7 +63,7 @@ public class FrmMain extends javax.swing.JFrame {
         jmiRawMaterialNew = new javax.swing.JMenuItem();
         jmiRawMaterialView = new javax.swing.JMenuItem();
         jmiRawMaterialNewList = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jmiDeleteRawMaterial = new javax.swing.JMenuItem();
         jmenuSupplier = new javax.swing.JMenu();
         jmenuAddSupplier = new javax.swing.JMenuItem();
         jmenuViewSuppliers = new javax.swing.JMenuItem();
@@ -163,13 +163,13 @@ public class FrmMain extends javax.swing.JFrame {
         });
         jmenuRawMateral.add(jmiRawMaterialNewList);
 
-        jMenuItem4.setText("Delete raw material");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jmiDeleteRawMaterial.setText("Delete raw material");
+        jmiDeleteRawMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jmiDeleteRawMaterialActionPerformed(evt);
             }
         });
-        jmenuRawMateral.add(jMenuItem4);
+        jmenuRawMateral.add(jmiDeleteRawMaterial);
 
         jMenuBar1.add(jmenuRawMateral);
 
@@ -281,11 +281,11 @@ public class FrmMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiRawMaterialNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRawMaterialNewActionPerformed
-        
+        new FrmNewRawMaterial(this, true).setVisible(true);
     }//GEN-LAST:event_jmiRawMaterialNewActionPerformed
 
     private void jmiRawMaterialViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRawMaterialViewActionPerformed
-            
+            new FrmViewRawMaterial(this, true).setVisible(true);
     }//GEN-LAST:event_jmiRawMaterialViewActionPerformed
 
     private void jmenuAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuAddSupplierActionPerformed
@@ -295,7 +295,7 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jmenuViewSuppliersActionPerformed
 
     private void jmiRawMaterialNewListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRawMaterialNewListActionPerformed
-    
+            new FrmNewRawMaterialsTM(this, true).setVisible(true);
     }//GEN-LAST:event_jmiRawMaterialNewListActionPerformed
 
     private void jmiNewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNewProductActionPerformed
@@ -340,9 +340,10 @@ public class FrmMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-       
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    private void jmiDeleteRawMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiDeleteRawMaterialActionPerformed
+        FrmDeleteRawMaterial fdrm = new FrmDeleteRawMaterial();
+        fdrm.setVisible(true);
+    }//GEN-LAST:event_jmiDeleteRawMaterialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,12 +363,12 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jmenuAddSupplier;
     private javax.swing.JMenu jmenuProduct;
     private javax.swing.JMenu jmenuRawMateral;
     private javax.swing.JMenu jmenuSupplier;
     private javax.swing.JMenuItem jmenuViewSuppliers;
+    private javax.swing.JMenuItem jmiDeleteRawMaterial;
     private javax.swing.JMenuItem jmiFindByName;
     private javax.swing.JMenuItem jmiIngredients;
     private javax.swing.JMenuItem jmiNewProduct;
