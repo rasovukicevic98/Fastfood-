@@ -71,7 +71,7 @@ public class FrmMain extends javax.swing.JFrame {
         jmiNewProduct = new javax.swing.JMenuItem();
         jmiFindByName = new javax.swing.JMenuItem();
         jmiViewAllProducts = new javax.swing.JMenuItem();
-        jmiIngredients = new javax.swing.JMenuItem();
+        jmiEditProduct = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
@@ -219,13 +219,13 @@ public class FrmMain extends javax.swing.JFrame {
         });
         jmenuProduct.add(jmiViewAllProducts);
 
-        jmiIngredients.setText("Edit product");
-        jmiIngredients.addActionListener(new java.awt.event.ActionListener() {
+        jmiEditProduct.setText("Edit product");
+        jmiEditProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiIngredientsActionPerformed(evt);
+                jmiEditProductActionPerformed(evt);
             }
         });
-        jmenuProduct.add(jmiIngredients);
+        jmenuProduct.add(jmiEditProduct);
 
         jMenuItem3.setText("Delete product");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -302,12 +302,12 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiRawMaterialNewListActionPerformed
 
     private void jmiNewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNewProductActionPerformed
-        
+        new FrmNewProduct(this, true).setVisible(true);
        
     }//GEN-LAST:event_jmiNewProductActionPerformed
 
     private void jmiFindByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiFindByNameActionPerformed
-
+        new FrmReturnID(this, true).setVisible(true);
     }//GEN-LAST:event_jmiFindByNameActionPerformed
 
     private void table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1MouseClicked
@@ -320,12 +320,14 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jmiViewAllProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiViewAllProductsActionPerformed
-        
+        FrmViewProducts frmViewProducts = new FrmViewProducts();
+        frmViewProducts.setVisible(true);
     }//GEN-LAST:event_jmiViewAllProductsActionPerformed
 
-    private void jmiIngredientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiIngredientsActionPerformed
-        
-    }//GEN-LAST:event_jmiIngredientsActionPerformed
+    private void jmiEditProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiEditProductActionPerformed
+        FrmEditProduct fi = new FrmEditProduct();
+        fi.setVisible(true);
+    }//GEN-LAST:event_jmiEditProductActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
        
@@ -340,7 +342,8 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-
+        FrmDeleteProduct fdp = new FrmDeleteProduct();
+       fdp.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jmiDeleteRawMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiDeleteRawMaterialActionPerformed
@@ -372,8 +375,8 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JMenu jmenuSupplier;
     private javax.swing.JMenuItem jmenuViewSuppliers;
     private javax.swing.JMenuItem jmiDeleteRawMaterial;
+    private javax.swing.JMenuItem jmiEditProduct;
     private javax.swing.JMenuItem jmiFindByName;
-    private javax.swing.JMenuItem jmiIngredients;
     private javax.swing.JMenuItem jmiNewProduct;
     private javax.swing.JMenuItem jmiRawMaterialNew;
     private javax.swing.JMenuItem jmiRawMaterialNewList;
