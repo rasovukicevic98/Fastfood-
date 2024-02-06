@@ -92,6 +92,16 @@ public class ObradaKlijentskihZahtjeva extends Thread{
                         so.setUspjesno(good);
                         posaljiOdgovor(so);
                         break;
+                    case Operacija.ADD_SUPPLIER:
+                        so = new ServerskiOdgovor();
+                        Supplier supplier = (Supplier) kz.getObjekat();
+                        if(Controller.getInstance().addSupplier(supplier)){
+                            so.setUspjesno(true);
+                        }else{
+                            so.setUspjesno(false);
+                        }
+                        posaljiOdgovor(so);
+                        break;
                 }
             } catch (Exception ex) {
                 Logger.getLogger(ObradaKlijentskihZahtjeva.class.getName()).log(Level.SEVERE, null, ex);
