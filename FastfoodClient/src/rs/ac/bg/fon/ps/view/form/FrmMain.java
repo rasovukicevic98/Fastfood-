@@ -289,9 +289,12 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiRawMaterialViewActionPerformed
 
     private void jmenuAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuAddSupplierActionPerformed
+         new FrmNewSupplier(this, true).setVisible(true);
+
     }//GEN-LAST:event_jmenuAddSupplierActionPerformed
 
     private void jmenuViewSuppliersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuViewSuppliersActionPerformed
+        new FrmViewSuppliers(this, true).setVisible(true);
     }//GEN-LAST:event_jmenuViewSuppliersActionPerformed
 
     private void jmiRawMaterialNewListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRawMaterialNewListActionPerformed
